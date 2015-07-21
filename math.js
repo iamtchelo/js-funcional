@@ -1,7 +1,7 @@
 var sum = function() {
   var result = 0;
   if (arguments.length) {
-    Array.prototype.forEach.call(arguments, function(number, index) {
+    Array.prototype.forEach.call(arguments, function(number) {
       if (typeof number !== 'number') {
         throw new TypeError('Expected a number :/');
       } else {
@@ -24,7 +24,7 @@ var multiplication = function() {
       for (var i = 0; i < previous; i++) {
         result += sum.call(null, current);
       }
-      
+
       return result;
     });
   }
