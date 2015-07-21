@@ -1,10 +1,7 @@
-var slice = Array.prototype.slice; // get slice prototype
-
 var sum = function() {
   var result = 0;
   if (arguments.length) {
-    slice.call(arguments)
-    .forEach(function(number, index) {
+    Array.prototype.forEach.call(arguments, function(number, index) {
       if (typeof number !== 'number') {
         throw new TypeError('Expected a number :/');
       } else {
@@ -18,8 +15,7 @@ var sum = function() {
 
 var multiplication = function() {
   if (arguments.length) {
-    return slice.call(arguments)
-    .reduce(function(previous, current) {
+    return Array.prototype.reduce.call(arguments, function(previous, current) {
       if (typeof previous !== 'number' || typeof current !== 'number') {
         throw new TypeError('Expected a number in previous and current :/');
       }
